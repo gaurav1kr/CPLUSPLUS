@@ -8,7 +8,7 @@ struct Interval
  
 bool compareInterval(Interval i1, Interval i2)
 {
-    return (i1.end < i2.end);
+    return (i1.end <= i2.end);
 }
  
 int main()
