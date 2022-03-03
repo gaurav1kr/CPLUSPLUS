@@ -27,6 +27,7 @@ void setZeroes(vector < vector < int >> & matrix)
         matrix[i][j] = 0;
       }     
     }
+	//Change the first column to zero
     if (col0 == 0) 
 	{
       matrix[i][0] = 0;
