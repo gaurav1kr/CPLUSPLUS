@@ -1,3 +1,0 @@
-g++ "SOURCE/"$1.cpp -o "EXECUTABLE/"$1 -g
-echo "Compilation Done..."
-./EXECUTABLE/$1
