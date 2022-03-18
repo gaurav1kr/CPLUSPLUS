@@ -6,3 +6,8 @@ Examples are smart ponters. auto initializion.
 
 CODE-BLOATING
 Production of code that is perceived unnecessary long ,slow and which cause unnecessary wastage of resources. 
+Examples :- 
+a)Functions defined inside class (By default compiler detects it online and copy the content as many times it is called)
+b)Printing constants string using variable :-
+string str("gaurav kumar") ; // unncessary calling string constructor 
+cout<<str ;
