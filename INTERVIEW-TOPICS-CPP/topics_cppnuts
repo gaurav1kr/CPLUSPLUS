@@ -1,0 +1,8 @@
+RAII :- 
+RAII (Resource Acquisition Is Initialization) is C++ technique which control the life cycle of resource. It is a class variant and is tied to object life time.
+
+It encapsulates several resources into class where resource allocation is done by constructor during object creation and resource deallocation is done by destructor during object destruction.
+Examples are smart ponters. auto initializion.
+
+CODE-BLOATING
+Production of code that is perceived unnecessary long ,slow and which cause unnecessary wastage of resources. 
