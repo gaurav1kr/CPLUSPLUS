@@ -200,7 +200,36 @@ int main()
     return 0 ;
 }
 
+##################reinterpret_cast
+#Perform dangerous conversions because it can typecast any pointer to any other..
+#If we use this type of cast then it will become non portable product.
+#case where it should not be used :- 
+#include<iostream>
+using namespace std ;
+class student
+{
+    public:
+    void studInfo()
+    {
+        cout<<"studinfo found" ;
+    }
+};
 
+class employee
+{
+    public:
+    void empInfo()
+    {
+        cout<<"empInfo found" ;
+    }
+};
+int main()
+{
+    student *stud = new student ;
+    employee *emp = reinterpret_cast<employee *>(stud) ;
+    emp->empInfo() ;
+    return 0 ;
+}
 
 
 
