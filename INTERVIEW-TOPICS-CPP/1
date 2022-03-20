@@ -85,8 +85,8 @@ class convcons
 
 int main()
 {
-   convcons cov(10) ; //conversion constructor will be called 
-   string str1 = static_cast<string>(cov) ; //Conversion operator will be called
-   cov = static_cast<convcons>(30) ;// Conversio constructor will be called
+   convcons cov(10) ; 
+   string str1 = static_cast<string>(cov) ;
+   cov = static_cast<convcons>(30) ;
    return 0 ;
 }
