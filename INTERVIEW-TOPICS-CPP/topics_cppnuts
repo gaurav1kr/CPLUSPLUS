@@ -128,3 +128,6 @@ int main()
 //    base *p = (base *)(&d1) ; // No error at compile time but can lead to undefined error as derived had inherited base privately 
     return 0 ;
 }
+
+5. It can be used for upcasting always. For downcasting , dynamic_cast needs to be used.
+6. It needs to be preferred when converting to void* OR from void*
