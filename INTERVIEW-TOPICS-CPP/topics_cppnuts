@@ -59,7 +59,7 @@ int main()
 #############static cast
 1. To increase readability (C-style casting is hard to search.. by using static_cast , code readability increases)
 2. Wherever conversion constructor and conversion operators are used
-######## conversion constructor && conversion operator
+# conversion constructor && conversion operator
 If a class has constructor which can be called with a single argument , then it is called conversion constructor.
 conversion constuctor should not be specified by 'explicit' so that compiler can use it to convert objects from the type of first parameter to type of conversion constructor's class.
 
@@ -131,3 +131,114 @@ int main()
 
 5. It can be used for upcasting always. For downcasting , dynamic_cast needs to be used.
 6. It needs to be preferred when converting to void* OR from void*
+
+####################dynamic_cast
+1. Used at run-time to find out correct down cast.
+2. If casting will be successful , dynamic_cast returns a value of new_type
+3. If casting fails and new type is pointer type , it will return NULL .
+4. If casting fails and new type is referemce type , it will return type std::bad_cast .
+e.g :- 
+
+#include<iostream>
+using namespace std ;
+class base
+{
+    public:
+        virtual void show()
+        {
+            cout<<"show from base" ;
+        }
+};
+
+class d1 : public base
+{
+    public:
+        void show()
+        {
+            cout<<"show from d1" ;
+        }
+};
+
+class d2 : public base
+{
+    public:
+        void show()
+        {
+            cout<<"show from d2" ;
+        }
+};
+/* showing pointer part */
+int main()
+{
+    d1 der_1 ;
+    base *b = &der_1 ;
+    d1 *der_2 = dynamic_cast<d1 *>(b) ; // success
+    d2 *der_3 =  dynamic_cast<d2 *>(b) ; // will assign NULL in der_3 as it is invalid casting 
+    if(der_2)
+    {
+        cout<<"typecasting successful" ;
+    }
+    else
+    {
+        cout<<"typecasting failed as returned NULL" ;
+    }
+    return 0 ;
+}
+
+/* showing reference part */
+int main()
+{
+    d1 der_1 ;
+    try
+    {
+        d2 & der_2 = dynamic_cast<d2&>(der_1) ;
+    }
+    catch(exception & e)
+    {
+        cout<<e.what() ; 
+    }
+    return 0 ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
