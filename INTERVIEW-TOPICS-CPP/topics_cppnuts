@@ -90,3 +90,23 @@ int main()
    cov = static_cast<convcons>(30) ;// Conversio constructor will be called
    return 0 ;
 }
+
+3. static_cast is more restrictive than C-Style. e.g :- we can type cast from char* to int* in C-style casting but not with static_cast. 
+e.g :-  
+#include<iostream>
+using namespace std ;
+int main()
+{
+    char c = 'd' ;
+//    int *p = &c ; //No compile time error but it will lead to seg fault or undefined behaviour as we are assigning 1 byte data into 4 byte address
+    int *p = static_cast<int *>(&c) ; // restrict the typecasting
+    *p = 10 ;
+    cout<<c ;
+    return 0 ;
+}
+g++ static_cast.cpp -o static_cast -g
+static_cast.cpp: In function ‘int main()’:
+static_cast.cpp:6:14: error: invalid ‘static_cast’ from type ‘char*’ to type ‘int*’
+    6 |     int *p = static_cast<int *>(&c) ;
+      |              ^~~~~~~~~~~~~~~~~~~~~~
+
