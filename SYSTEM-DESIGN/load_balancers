@@ -1,0 +1,25 @@
+Load Balancing:
+ - It helps to distribute load across multiple resources. 
+ - It also keep track of status of all the resources while distributing requests. If a server is not available, it stops sending traffic. 
+ - LB can be added at three places:
+  - Between user & web-server
+  - Between web-servers & internal servers (Application servers or cache servers)
+  - Between Internal platform layer & DB
+ - Types of load balancers: 
+  - Smart Clients
+   - It'll take a pool of service hosts & balances load, manage them (Detect recovered host, deal with adding new hosts, etc)
+  - Hardware LB: 
+   - They are hardware which works as LB, but are very expensive. 
+   - Even big companies use them only as first point of contact & use other machanism for load-balancing.
+  - Software Load balancers:
+   - It's hybrid approach. HAProxy is popular open source software LB.
+   - Every client request on this port (where HAProxy is running) will be received by proxy & then passed to the backend service in efficient way. 
+   - HAProxy manages health check & will remove or add machines to those pools.
+  --> Load balancing algorithms :- 
+  - Round Robin :- After completion of allocation of last request , next request will be allocated first node.
+  - Round Robin Weighted server :- There will be 2 servers. Requests will be sent to the server which can handle more request. Once
+                                   it will be filled , smaller server will take request.
+  - least connections :- Request will be allocated to the node which will have least connection
+  - least response time :- Request will be allocated to the node which will have faster response
+  - Source IP Hash :- Source IP will be convered to hash value and it will be sent to the node which has same hash value.
+  - URL hash :- URL will be converted to hash value and it will be sent to node which will match the hash value of the node.
