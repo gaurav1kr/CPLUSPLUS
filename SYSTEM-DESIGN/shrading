@@ -1,0 +1,25 @@
+Sharding is a technique to break up a big database into many smaller parts.
+
+Horizontal partitioning involves putting different rows into different tables. Perhaps customers with ZIP codes less than 50000 are stored in CustomersEast, while customers with ZIP codes greater than or equal to 50000 are stored in CustomersWest. The two partition tables are then CustomersEast and CustomersWest, while a view with a union might be created over both of them to provide a complete view of all customers.
+
+Vertical partitioning involves creating tables with fewer columns and using additional tables to store the remaining columns. Normalization also involves this splitting of columns across tables, but vertical partitioning goes beyond that and partitions columns even when already normalized.
+We do shrading since handling a single database is very difficult and infeasible.
+
+-->Sharding methods :-  
+a. Horizontal Partitioning
+b. Vertical Partitioning
+c. Directory based Partitioning
+
+
+-->Sharding Criteria :- 
+a. Hash based --> Calculate hash value of entities to be inserted and insert in db according to the value.
+b. List partitioning --> Based on Lists, we decide partition
+    ..... e.g :-  Regions -> APAC , EMEA , US
+                  AMAC--> hash partitioning for AMAC
+                  EMEA--> hash partitioning for EMEA
+                  US --> hash partitioning for US
+c. Round-Robin Partitioning --> Assign partition one by one in Round-Robin way.
+d. Composite Partitioning --> Combining any above schemes
+
+ACID Challenges :- 
+

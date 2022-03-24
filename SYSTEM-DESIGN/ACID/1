@@ -1,0 +1,24 @@
+                                    ACID------------------------------
+                                /   |   \                            |
+                              /     |     \                          |
+                            /       |       \                        |
+                          /         |         \                      |
+                       /            |           \                    |
+                Atomicity       Consistency     Isolation         Durability-------> In case of system failure, db   
+            (All or None)                                                            should persis, i.e;             
+                 |                  |                |                               should keep updated                    
+                 |                  |                |                               data.
+        Trans shoud be either       |                |
+        completed or not.           |                |
+                                    |                |
+                                    |                |
+                            DB should be correct     |
+                            after transaction        |
+                            and integrity shud       |
+                            be maintained.           |
+                                                     |
+                                                     |
+                                                One operation should be independent
+                                                of other (e.g :- Read shud give correct 
+                                                                output in case of write operation on the 
+                                                                same time
