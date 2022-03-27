@@ -1,0 +1,7 @@
+--> Useful in database to improve the speed of data retrieval.
+--> It is a data structure of table of contents that points us to the location where actual data lives. When
+    we create an index on a column of the table, we store that column & a pointer to the whole row of the index.
+
+-- Indexing type :-
+a) ordered Indexing --> Column is sorted as per ascending order.
+b) Hash Indexing --> Indexing is as pre hash function & Hash table 
