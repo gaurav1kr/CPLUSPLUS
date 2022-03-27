@@ -21,5 +21,6 @@ b. List partitioning --> Based on Lists, we decide partition
 c. Round-Robin Partitioning --> Assign partition one by one in Round-Robin way.
 d. Composite Partitioning --> Combining any above schemes
 
-ACID Challenges :- 
-
+--> Challenges :-
+a. maintain ACID
+b. Joins are inefficient

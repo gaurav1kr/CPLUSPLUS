@@ -1,0 +1,15 @@
+Proxy server is intermediary hardware / software that sits between client and server
+It us used to filter requests :-
+--> Log requests
+--> Transform requests by adding/removing headers.
+--> Encrypting / decrypting or compression
+
+Filtering reques is done by ACL control.
+
+when client sends a request to the server, it first goes on proxy server and if it is valid request it sends 
+request to server, get a response from server and respond it to client. This is used on blocking sites in an organisation.
+
+
+Benefits :-
+--> It has it's own cache and can server a lot of requests.
+--> It can coordinate requests from multiple servers and can be used to optimize request traffic.
