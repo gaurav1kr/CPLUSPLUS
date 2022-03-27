@@ -1,0 +1,11 @@
+In Synchronous transmission, data is sent in form of blocks or frames
+There is no gap present between data. It is reliable.
+
+In asynchronous data transfer , data is sent in the form of byte or character. This transmission is half duplex. 
+In this transmission start bits and stop bits are added with data. It doesn't require syncrhonization
+
+Synchronous transmission is fast while asynchronous data transfer is slow.
+
+Synchronous transmission is costly while asynchronous data transfter is economical.
+
+In Synchronous transmission , there is no gap present between data. In Async transmission , there is present gap between data.
