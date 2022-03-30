@@ -1,3 +1,5 @@
 1. Through function pointer
 2. Through Lambda expression 
 3. Through Functor
+4. Non static Member function
+5. static member function
