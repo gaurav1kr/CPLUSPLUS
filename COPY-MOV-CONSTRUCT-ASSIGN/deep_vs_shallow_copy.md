@@ -59,10 +59,12 @@ int main() {
 ### Output:
 ```
 Constructor called
-obj1 data: 10
-obj2 data: 10
-Destructor called
-Destructor called
+ obj1 data: 10
+ obj2 data: 10
+ Destructor called
+ a.out(69711,0x207c38240) malloc: *** error for object 0x600003b2c030: pointer being freed was not allocated
+ a.out(69711,0x207c38240) malloc: *** set a breakpoint in malloc_error_break to debug
+ zsh: abort      ./a.out
 ```
 
 The program crashes due to a double deletion of the same memory.
