@@ -11,10 +11,12 @@ Imagine a weather station that updates its temperature, and multiple displays (e
 ## **Code Implementation**
 
 ```cpp
+
 #include <iostream>
 #include <vector>
 #include <string>
 #include <memory>
+#include <algorithm> // For std::remove
 
 // Forward declaration
 class Observer;
@@ -47,14 +49,18 @@ public:
     }
 
     void detach(std::shared_ptr<Observer> observer) override {
-        observers.erase(
-            std::remove(observers.begin(), observers.end(), observer), observers.end()
-        );
+        // Use std::find to locate the observer before removing
+        auto it = std::find(observers.begin(), observers.end(), observer);
+        if (it != observers.end()) {
+            observers.erase(it);
+        }
     }
 
     void notify() override {
         for (auto& observer : observers) {
-            observer->update(temperature);
+            if (observer) {
+                observer->update(temperature);
+            }
         }
     }
 
@@ -70,7 +76,7 @@ private:
     std::string name;
 
 public:
-    PhoneDisplay(const std::string& displayName) : name(displayName) {}
+    explicit PhoneDisplay(const std::string& displayName) : name(displayName) {}
     void update(float temperature) override {
         std::cout << name << " Phone Display: Temperature updated to " << temperature << "°C\n";
     }
@@ -81,7 +87,7 @@ private:
     std::string location;
 
 public:
-    LEDBoardDisplay(const std::string& loc) : location(loc) {}
+    explicit LEDBoardDisplay(const std::string& loc) : location(loc) {}
     void update(float temperature) override {
         std::cout << "LED Board at " << location << ": Temperature is now " << temperature << "°C\n";
     }
@@ -110,6 +116,7 @@ int main() {
 
     return 0;
 }
+
 ```
 
 ---
