@@ -17,11 +17,15 @@ public:
         cout << "Copy Constructor called" << endl;
     }
 
-    // Default copy constructor (shallow copy)
+    // Default copy constructor (deep copy)
     MyClass(const MyClass &other) 
     {
 	data = new int(*(other.data)) ;
     }
+
+
+    // Default copy constructor (shallow copy)
+    //MyClass(const MyClass &other) = default ; //If we uncomment this line and comment above lines where we are doing deep copy, it will be a shallow copy and program will crash due to double free when destructor will be called. 
 
     MyClass & operator=(const MyClass & other)
     {
